@@ -1,4 +1,4 @@
-## CMPE283 Assignments
+# CMPE283 Assignments
 
 ## University Details:
 
@@ -12,7 +12,7 @@ Team -
 
 1. Ruchik Pravasi (SID: 017452461)
 
-# Assignment 1 Discovering VMX features
+## Assignment 1 Discovering VMX features
 
 Assignment is to create a Linux kernel module that will query various MSRs to determine virtualization features available in your CPU. This module will report (via the system message log) the features it discovers.
 
