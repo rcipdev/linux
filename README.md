@@ -3,7 +3,9 @@
 ## University Details:
 
 San Jose State University
+
 Course: CMPE 283 - Virtualization Technology
+
 Professor: Mike Larkin
 
 Team -
@@ -101,8 +103,17 @@ This command will show vmx flags, if flags are not shown VM is not nested virtua
     cp /boot/config-5.15.0-1047-gcp /home/rkpravasi77/linux/.config
     ```
 
-    - Type command "make oldconfig"
-    - Type command "make prepare"
+    - Type command
+
+    ```bash
+    make oldconfig
+    ```
+
+    - Type command
+
+    ```bash
+    make prepare
+    ```
 
     - There were some certificate-related errors while running the "make prepare" command. I solved it by following the method outlined below.
 
@@ -111,11 +122,37 @@ This command will show vmx flags, if flags are not shown VM is not nested virtua
         scripts/config --disable SYSTEM_REVOCATION_KEYS
     ```
 
-    - Make modules using "make -j 8 modules" (Replace 8 with the number of vcpu's allocated during VM creation)
-    - Type command "make -j 8" for making kernel
-    - Type command for installing modules "sudo make INSTALL_MOD_STRIP=1 modules_install" (Note: INSTALL_MOD_STRIP=1 is used to skip debugging information)
-    - Type command "sudo make install" to install our new kernel
-    - Type command "sudo reboot" to restart the VM inorder to apply our changes
+    - Make modules using
+
+    ```bash
+    make -j 8 modules
+    ```
+
+    (Replace 8 with the number of vcpu's allocated during VM creation)
+
+    - Type command for making kernel
+
+    ```bash
+    make -j 8
+    ```
+
+    - Type command for installing modules (Note: INSTALL_MOD_STRIP=1 is used to skip debugging information)
+
+    ```bash
+    sudo make INSTALL_MOD_STRIP=1 modules_install
+    ```
+
+    - Type command
+
+    ```bash
+    sudo make install
+    ```
+
+    - Type command to restart the VM inorder to apply our changes
+
+    ```bash
+    sudo reboot
+    ```
 
 12. After rebooting, use "uname -a" to determine the kernel version. If the kernel version and timestamp have been updated to the most recent version, the kernel is properly installed and running.
 
